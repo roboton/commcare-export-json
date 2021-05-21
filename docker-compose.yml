@@ -4,8 +4,6 @@ services:
     image: "postgres:alpine"
     environment:
       POSTGRES_PASSWORD: postgres
-    volumes:
-      - ~/.aws:/root/.aws
   commcare_export_json:
     build: .
     environment:
@@ -13,3 +11,7 @@ services:
       - CC_APIKEY
       - CC_PROJECT
       - S3_DEST
+      - AWS_ACCESS_KEY_ID
+      - AWS_SECRET_ACCESS_KEY
+#    volumes:
+#      - ~/.aws:/root/.aws
