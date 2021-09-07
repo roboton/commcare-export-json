@@ -7,6 +7,7 @@ services:
   commcare_export_json:
     build: .
     environment:
+      - CC_HQ
       - CC_USER
       - CC_APIKEY
       - CC_PROJECT
