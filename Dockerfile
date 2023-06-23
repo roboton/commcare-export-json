@@ -1,7 +1,9 @@
 # syntax=docker/dockerfile:1
 FROM python:3.8-slim
 WORKDIR /tmp
-RUN pip install psycopg2-binary commcare-export
+RUN pip install psycopg2-binary
+COPY commcare-export-1.8.2.tar.gz commcare-export-1.8.2.tar.gz
+RUN pip install commcare-export-1.8.2.tar.gz
 RUN apt-get update && apt-get install -y postgresql-client curl unzip
 RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" && \ 
     unzip awscliv2.zip && ./aws/install 
