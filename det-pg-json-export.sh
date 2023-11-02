@@ -1,6 +1,6 @@
 #!/bin/sh
 commcare-export --commcare-hq ${CC_HQ} --project ${CC_PROJECT} \
-    --username ${CC_USER} --password ${CC_APIKEY} \
+    --username ${CC_USER} --password ${CC_APIKEY} --auth-mode ${CC_AUTH_MODE} \
     --output-format sql --output postgresql://postgres:postgres@postgres/postgres \
     --query json_export.xlsx && \
     psql postgresql://postgres:postgres@postgres/postgres -f export_to_disk.sql && \

@@ -6,7 +6,9 @@ You are probably looking for the [commcare-export](https://github.com/dimagi/com
 Docker set up to export json files to s3 from a CommCare project using the [commcare-export](https://github.com/dimagi/commcare-export) tool via an ephemeral PostgreSQL instance.
 
 ```
-./run.sh <commcare hq> <commcare username> <commcare api key> <commcare project> <AWS_ACCESS_KEY_ID> <AWS_SECRET_ACCESS_KEY> <s3 destination>
+./run.sh <commcare hq> <commcare username> <commcare api key or password> <commcare auth-mode> <commcare project> <AWS_ACCESS_KEY_ID> <AWS_SECRET_ACCESS_KEY> <s3 destination>
 ```
 Links for more information on [commcare* flags](https://github.com/dimagi/commcare-export#command-line-usage),
  [AWS keys](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-envvars.html) and [s3 destination](https://docs.aws.amazon.com/cli/latest/reference/s3/#path-argument-type).
+
+You can enable CommCare authentication using either a password or an API key by configuring the ```<commcare auth-mode>``` setting to 'password' or 'apikey'. More information on CommCare methods of authentication can be found [here](https://confluence.dimagi.com/display/commcarepublic/Authentication).

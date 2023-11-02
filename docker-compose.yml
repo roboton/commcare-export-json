@@ -10,6 +10,7 @@ services:
       - CC_HQ
       - CC_USER
       - CC_APIKEY
+      - CC_AUTH_MODE
       - CC_PROJECT
       - S3_DEST
       - AWS_ACCESS_KEY_ID
